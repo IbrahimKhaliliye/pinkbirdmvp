@@ -19,6 +19,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button scanButton;
 
     @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        scanButton= findViewById(R.id.scanButton);
+        scanButton.setOnClickListener(this);
+    }
+    @Override
     public void onClick(View view) {
         scancode();
     }
