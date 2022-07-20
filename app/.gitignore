@@ -1,1 +1,9 @@
 /build
+
+# Files associated w/ builds
+.gradle/7.2/executionHistory/executionHistory.bin
+.gradle/7.2/executionHistory/executionHistory.lock
+.gradle/7.2/fileHashes/fileHashes.bin
+.gradle/7.2/fileHashes/fileHashes.lock
+# .idea/modules/app/scanner.app.iml
+
