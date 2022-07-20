@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "788961666876",
+    "project_id": "pinkbird-a0d69",
+    "storage_bucket": "pinkbird-a0d69.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788961666876:android:7bbdfc153e51ab6bda2039",
+        "android_client_info": {
+          "package_name": "com.example.scanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788961666876-u09jll7gduhqndk6ghvjcp298q4qt4m1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHLcNRKFVvUInFE_N8F9UivdzXZuMzMIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788961666876-u09jll7gduhqndk6ghvjcp298q4qt4m1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788961666876:android:85c3198d41d5312ada2039",
+        "android_client_info": {
+          "package_name": "com.pinkbird.mvp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788961666876-u09jll7gduhqndk6ghvjcp298q4qt4m1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHLcNRKFVvUInFE_N8F9UivdzXZuMzMIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788961666876-u09jll7gduhqndk6ghvjcp298q4qt4m1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
