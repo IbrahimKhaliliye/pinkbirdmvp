@@ -1,17 +1,17 @@
 package com.example.scanner;
 
-public class database {
+public class Product {
     private String Barcode;
-    private String pinkrax;
+    private String pinktax;
     private String productname;
 
-    public database(String barcode, String pinkrax, String productname) {
+    public Product(String barcode, String pinktax, String productname) {
         Barcode = barcode;
-        this.pinkrax = pinkrax;
+        this.pinktax = pinktax;
         this.productname = productname;
     }
 
-    public database() {
+    public Product() {
     }
 
     public String getBarcode() {
@@ -22,12 +22,12 @@ public class database {
         Barcode = barcode;
     }
 
-    public String getPinkrax() {
-        return pinkrax;
+    public String getPinktax() {
+        return pinktax;
     }
 
-    public void setPinkrax(String pinkrax) {
-        this.pinkrax = pinkrax;
+    public void setPinktax(String pinktax) {
+        this.pinktax = pinktax;
     }
 
     public String getProductname() {
