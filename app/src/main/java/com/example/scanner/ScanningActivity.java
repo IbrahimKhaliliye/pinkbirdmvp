@@ -50,6 +50,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                 }).setNegativeButton("finish", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        String IDnumber = result.getContents();
                         finish();
                     }
                 });
