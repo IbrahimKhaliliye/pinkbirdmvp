@@ -75,11 +75,8 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
 
-        if (view == signup){
-            String user_password = password.getText().toString();
-            if(Is_password_strong(user_password)) {
+        if (view == signup)
                 createAccount(email.getText().toString(),password.getText().toString());
-            }
             else {
                 Toast.makeText(this, "weak password\n make sure you have\n 1 uppercase\n 1 lowercase\n 1 number\n special\n ", Toast.LENGTH_SHORT).show();
             }
@@ -90,4 +87,3 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
 
 
-}
