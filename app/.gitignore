@@ -14,3 +14,8 @@
 
 gradle.xml
 .idea/libraries
+
+
+# IntelliJ IDEA
+classes
+.gradle/checksums
