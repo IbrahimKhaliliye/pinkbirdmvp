@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/scanner.iml" filepath="$PROJECT_DIR$/.idea/modules/scanner.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/scanner.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/scanner.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/scanner.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/scanner.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/scanner.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/scanner.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/scanner.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/scanner.app.unitTest.iml" />
     </modules>
   </component>
 </project>

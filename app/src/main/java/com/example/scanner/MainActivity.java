@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText email, password;
     private Button sign_in, sign_up;
     private FirebaseAuth mAuth;
+    private FirebaseUser FireUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sign_in = findViewById(R.id.sign_in);
         sign_up = findViewById(R.id.sign_up);
         mAuth = FirebaseAuth.getInstance();
+        FireUser = mAuth.getCurrentUser();
         sign_in.setOnClickListener(this);
         sign_up.setOnClickListener(this);
     }
