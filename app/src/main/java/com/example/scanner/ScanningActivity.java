@@ -10,20 +10,36 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 public class ScanningActivity extends AppCompatActivity  implements View.OnClickListener{
-    Button scanButton;
+    Button scanButton, signoutButton;
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanning);
         scanButton = findViewById(R.id.scanButton);
+        signoutButton = findViewById(R.id.signout);
+        mAuth = FirebaseAuth.getInstance();
         scanButton.setOnClickListener(this);
+        signoutButton.setOnClickListener(this);
+
 
     }
+    private void signoutFunction(){
+        mAuth.signOut();
+        Intent intent = new Intent(ScanningActivity.this,MainActivity.class);
 
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+        startActivity(intent);
+
+
+    }
 
     private void scancode(){
         IntentIntegrator integrator = new IntentIntegrator(this);
@@ -71,6 +87,8 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
         if (view == scanButton) {
             scancode();
+        } else if (view == signoutButton){
+            signoutFunction();
         }
 
     }

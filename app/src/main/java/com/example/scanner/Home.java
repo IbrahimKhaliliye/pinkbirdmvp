@@ -17,7 +17,7 @@ public class Home extends Application {
         FirebaseUser FireUser = mAuth.getCurrentUser();
 
         if(FireUser != null) {
-            Intent intent = new Intent(Home.this, MainActivity.class);
+            Intent intent = new Intent(Home.this, ScanningActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         }
