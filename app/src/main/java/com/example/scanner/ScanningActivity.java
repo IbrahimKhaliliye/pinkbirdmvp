@@ -15,7 +15,7 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 public class ScanningActivity extends AppCompatActivity  implements View.OnClickListener{
-    Button scanButton, signoutButton;
+    Button scanButton, signoutButton, productsButton;
     FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +23,11 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         setContentView(R.layout.activity_scanning);
         scanButton = findViewById(R.id.scanButton);
         signoutButton = findViewById(R.id.signout);
+        productsButton = findViewById(R.id.allProducts);
         mAuth = FirebaseAuth.getInstance();
         scanButton.setOnClickListener(this);
         signoutButton.setOnClickListener(this);
+        productsButton.setOnClickListener(this);
 
 
     }
@@ -38,6 +40,12 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
         startActivity(intent);
 
+
+    }
+
+    private void GoToAllProducts(){
+        Intent intent = new Intent(ScanningActivity.this,ProductListActivity.class);
+        startActivity(intent);
 
     }
 
@@ -89,6 +97,8 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
             scancode();
         } else if (view == signoutButton){
             signoutFunction();
+        } else if (view == productsButton){
+            GoToAllProducts();
         }
 
     }

@@ -23,4 +23,13 @@
         android:text="Signout"
         android:textSize="20sp" />
 
+    <Button
+        android:id="@+id/allProducts"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="1141px"
+        android:layout_marginLeft="350px"
+        android:text="Signout"
+        android:textSize="20sp" />
+
 </RelativeLayout>
