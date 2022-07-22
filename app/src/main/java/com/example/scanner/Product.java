@@ -1,33 +1,33 @@
 package com.example.scanner;
 
 public class Product {
-    private String barcode;
-    private String pinktax;
+    private Long barcode;
+    private Long pinktax;
     private String productname;
 
 
     public Product (){
 
     }
-    public Product (String barcode,String pinktax,String productname ){
+    public Product (Long barcode,Long pinktax,String productname ){
         this.barcode = barcode;
         this.pinktax = pinktax;
         this.productname = productname;
 
     }
-    public String getBarcode() {
+    public Long getBarcode() {
         return barcode;
     }
 
-    public void setBarcode(String barcode) {
+    public void setBarcode(Long barcode) {
         this.barcode = barcode;
     }
 
-    public String getPinktax() {
+    public Long getPinktax() {
         return pinktax;
     }
 
-    public void setPinktax(String pinktax) {
+    public void setPinktax(Long pinktax) {
         this.pinktax = pinktax;
     }
 

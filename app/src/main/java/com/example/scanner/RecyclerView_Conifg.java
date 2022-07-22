@@ -39,9 +39,9 @@ public class RecyclerView_Conifg {
 
         }
         public void bind(Product product, String key){
-            mCode.setText(product.getBarcode());
+            mCode.setText(product.getBarcode().toString());
             mName.setText(product.getProductname());
-            mTax.setText(product.getPinktax());
+            mTax.setText(product.getPinktax().toString());
             this.key = key;
         }
     }
