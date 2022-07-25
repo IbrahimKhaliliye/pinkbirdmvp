@@ -11,12 +11,19 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import java.util.HashMap;
 
 public class ScanningActivity extends AppCompatActivity  implements View.OnClickListener{
     Button scanButton, signoutButton, productsButton;
     FirebaseAuth mAuth;
+    DatabaseReference DBR;
+    FirebaseDatabase DB;
+    String Productname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +32,13 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         signoutButton = findViewById(R.id.signout);
         productsButton = findViewById(R.id.allProducts);
         mAuth = FirebaseAuth.getInstance();
+        DB = FirebaseDatabase.getInstance("https://pinkbird-a0d69-default-rtdb.europe-west1.firebasedatabase.app");
+        DBR = DB.getReference("products");
         scanButton.setOnClickListener(this);
         signoutButton.setOnClickListener(this);
         productsButton.setOnClickListener(this);
+
+
 
 
     }
@@ -67,14 +78,31 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                 builder.setMessage((result.getContents()));
                 builder.setTitle("Scanning Result");
                 builder.setPositiveButton("Scan Again", new DialogInterface.OnClickListener() {
+
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         scancode();
                     }
                 }).setNegativeButton("finish", new DialogInterface.OnClickListener() {
+
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String IDnumber = result.getContents();
+
+                        DBR.child(result.getContents()).get().addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                HashMap<String, String> value = (HashMap<String, String>) task.getResult().getValue();
+                                if (value != null ){
+                                    Productname = value.get("productname");
+                                } else {
+                                    Intent intent = new Intent(ScanningActivity.this, MainActivity.class);
+                                    startActivity(intent);
+                                }
+                            }
+                        });
+
+
+
                         finish();
                     }
                 });
