@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +25,9 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     DatabaseReference DBR;
     FirebaseDatabase DB;
     String Productname;
+    String idnumber;
+    TextView productname;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +41,6 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         scanButton.setOnClickListener(this);
         signoutButton.setOnClickListener(this);
         productsButton.setOnClickListener(this);
-
-
 
 
     }
@@ -87,22 +89,10 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        String IDnumber = result.getContents();
-
-                        DBR.child(result.getContents()).get().addOnCompleteListener(task -> {
-                            if (task.isSuccessful()) {
-                                HashMap<String, String> value = (HashMap<String, String>) task.getResult().getValue();
-                                if (value != null ){
-                                    Productname = value.get("productname");
-                                } else {
-                                    Intent intent = new Intent(ScanningActivity.this, MainActivity.class);
-                                    startActivity(intent);
-                                }
-                            }
-                        });
-
-
-
+                      idnumber = result.getContents();
+                      Intent intent =new Intent(ScanningActivity.this,ProductContentActivity.class);
+                      intent.putExtra("idnumber",idnumber);
+                      startActivity(intent);
                         finish();
                     }
                 });
