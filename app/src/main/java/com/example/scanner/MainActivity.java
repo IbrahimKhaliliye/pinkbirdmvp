@@ -1,16 +1,13 @@
 package com.example.scanner;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,12 +15,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText email, password;
-    private Button sign_in, sign_up;
+    private ImageButton sign_in, sign_up;
     private FirebaseAuth mAuth;
     private FirebaseUser FireUser;
 
@@ -34,12 +30,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         sign_in = findViewById(R.id.sign_in);
-        sign_up = findViewById(R.id.sign_up);
+        sign_up = findViewById(R.id.tttt);
         mAuth = FirebaseAuth.getInstance();
         FireUser = mAuth.getCurrentUser();
         sign_in.setOnClickListener(this);
         sign_up.setOnClickListener(this);
     }
+
 
     public void signin(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)

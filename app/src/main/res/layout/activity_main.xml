@@ -1,109 +1,211 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/pinkbird"
-    android:gravity="center"
-    android:orientation="vertical"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:context=".MainActivity">
-
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="300dp"
-        android:layout_height="400dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"
-        app:srcCompat="@drawable/rectangle"
-        tools:ignore="ImageContrastCheck" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Sign In"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.263" />
-
-    <EditText
-        android:id="@+id/email"
+    android:layout_height="wrap_content"
+    android:background="#FFEADD">
+    <!--
+    /*
+     *	This content is generated from the API File Info.
+     *	(Alt+Shift+Ctrl+I).
+     *
+     *	@desc
+     *	@file 		mainactivity2
+     *	@date 		Tuesday 26th of July 2022 06:42:16 AM
+     *	@title 		Page 1
+     *	@author
+     *	@keywords
+     *	@generator 	Export Kit v1.3.figma
+     *
+     */
+    -->
+    <ScrollView
+        android:id="@+id/mainactivity2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="32dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.38"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.523" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/sign_in"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:text="sign in"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.271"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.592" />
-
-    <Button
-        android:id="@+id/sign_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:text="create account"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.713" />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="118dp"
-        android:ems="10"
-        android:hint="password"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.497" />
+        <RelativeLayout
+            android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <RelativeLayout
+                android:id="@+id/page_mainactivity2_ek1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp">
+
+                <View
+                    android:id="@+id/bg_mainactivity2_ek2"
+                    android:layout_width="385dp"
+                    android:layout_height="800dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp" />
+
+                <ImageView
+                    android:id="@+id/ImageV"
+                    android:layout_width="385dp"
+                    android:layout_height="800dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:contentDescription="rectangle_8"
+                    android:src="@drawable/rectangle_8" />
+
+                <View
+                    android:id="@+id/rectangle_2"
+                    android:layout_width="288dp"
+                    android:layout_height="250dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="49dp"
+                    android:layout_marginTop="239dp"
+                    android:background="@drawable/rec" />
+
+                <View
+                    android:id="@+id/rectangle_"
+                    android:layout_width="219dp"
+                    android:layout_height="50dp"
+                    android:layout_alignTop="@+id/rectangle_2"
+                    android:layout_marginStart="83dp"
+                    android:layout_marginTop="104dp"
+                    android:background="@drawable/rectangle_3" />
+
+                <View
+                    android:id="@+id/rectangle"
+                    android:layout_width="219dp"
+                    android:layout_height="50dp"
+                    android:layout_alignTop="@+id/rectangle_2"
+                    android:layout_marginStart="83dp"
+                    android:layout_marginTop="44dp"
+                    android:layout_marginBottom="185dp"
+                    android:background="@drawable/rectangle_3" />
+
+                <ImageButton
+                    android:id="@+id/tttt"
+                    android:layout_width="30dp"
+
+                    android:layout_height="50dp"
+                    android:layout_alignStart="@+id/rectangle_2"
+                    android:layout_alignTop="@+id/editTextTextPersonName2"
+                    android:layout_alignEnd="@+id/rectangle_2"
+                    android:layout_marginStart="99dp"
+                    android:layout_marginTop="131dp"
+                    android:layout_marginEnd="89dp"
+                    android:background="@drawable/rectangle_3"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <ImageButton
+                    android:id="@+id/sign_in"
+                    android:layout_width="100dp"
+                    android:layout_height="48dp"
+                    android:layout_alignStart="@+id/rectangle_2"
+                    android:layout_alignEnd="@+id/rectangle_2"
+                    android:layout_marginStart="96dp"
+                    android:layout_marginTop="412dp"
+                    android:layout_marginEnd="92dp"
+                    android:background="@drawable/rectangle_3"
+                    />
+
+                <ImageView
+                    android:id="@+id/logo_1_1"
+                    android:layout_width="212dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="96dp"
+                    android:layout_marginTop="131dp"
+                    android:contentDescription="logo_1_1"
+                    android:src="@drawable/logo__1__1" />
+
+
+                <RelativeLayout
+                    android:id="@+id/group_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="49dp"
+                    android:layout_marginTop="503dp"/>
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/group_7"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="87dp"
+                    android:layout_marginEnd="89dp"
+                    android:layout_marginBottom="184dp"
+                    android:ems="10"
+                    android:hint="E-mail"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignTop="@+id/rectangle_2"
+                    android:layout_alignEnd="@+id/bg_mainactivity2_ek2"
+                    android:layout_alignBottom="@+id/group_7"
+                    android:layout_marginTop="128dp"
+                    android:layout_marginEnd="99dp"
+                    android:layout_marginBottom="170dp"
+                    android:ems="10"
+                    android:hint="Password"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/tttt"
+                    android:layout_alignTop="@+id/tttt"
+                    android:layout_alignEnd="@+id/tttt"
+                    android:layout_alignBottom="@+id/rectangle_2"
+                    android:layout_marginStart="61dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="39dp"
+                    android:layout_marginBottom="28dp"
+                    android:text="Login"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/tttt"
+                    android:layout_alignBottom="@+id/tttt"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="26dp"
+                    android:text="create account" />
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/editTextTextPersonName2"
+                    android:layout_alignEnd="@+id/rectangle_"
+                    android:layout_alignBottom="@+id/rectangle_"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="15dp"
+                    android:ems="10"
+                    android:hint="Password"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/sign_in"
+                    android:layout_alignEnd="@+id/sign_in"
+                    android:layout_alignBottom="@+id/sign_in"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginEnd="14dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="Login" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>

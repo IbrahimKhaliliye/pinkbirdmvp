@@ -34,13 +34,12 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         setContentView(R.layout.activity_scanning);
         scanButton = findViewById(R.id.scanButton);
         signoutButton = findViewById(R.id.signout);
-        productsButton = findViewById(R.id.allProducts);
         mAuth = FirebaseAuth.getInstance();
         DB = FirebaseDatabase.getInstance("https://pinkbird-a0d69-default-rtdb.europe-west1.firebasedatabase.app");
         DBR = DB.getReference("products");
         scanButton.setOnClickListener(this);
         signoutButton.setOnClickListener(this);
-        productsButton.setOnClickListener(this);
+
 
 
     }
@@ -56,11 +55,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
     }
 
-    private void GoToAllProducts(){
-        Intent intent = new Intent(ScanningActivity.this,ProductListActivity.class);
-        startActivity(intent);
 
-    }
 
     private void scancode(){
         IntentIntegrator integrator = new IntentIntegrator(this);
@@ -115,8 +110,6 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
             scancode();
         } else if (view == signoutButton){
             signoutFunction();
-        } else if (view == productsButton){
-            GoToAllProducts();
         }
 
     }

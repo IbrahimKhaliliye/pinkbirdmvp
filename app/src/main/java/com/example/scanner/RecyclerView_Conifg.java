@@ -2,7 +2,6 @@ package com.example.scanner;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -31,7 +30,7 @@ public class RecyclerView_Conifg {
         private String key;
 
         public ProductItemView(ViewGroup parent) {
-            super(LayoutInflater.from(mContext).inflate(R.layout.prodcut_list_item, parent, false));
+            super(LayoutInflater.from(mContext).inflate(R.layout.alts_list_item, parent, false));
 
             mCode = itemView.findViewById(R.id.ProductCode);
             mName = itemView.findViewById(R.id.ProductName);
