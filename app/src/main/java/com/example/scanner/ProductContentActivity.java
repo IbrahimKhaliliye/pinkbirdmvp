@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -14,6 +16,14 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import com.squareup.picasso.Picasso;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+
 
 public class ProductContentActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
@@ -25,6 +35,7 @@ public class ProductContentActivity extends AppCompatActivity {
     String Productname;
     Long Productcode,Productprice;
     String idnumber;
+    ImageView rImage;
     TextView productname,productcode,productprice;
 
 
@@ -59,7 +70,46 @@ public class ProductContentActivity extends AppCompatActivity {
         }else {
             productname.setText("no value found");
         }
+        rImage = findViewById(R.id.rImage);
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference();
+        DatabaseReference getImage = databaseReference.child("image");
+        getImage.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String link = dataSnapshot.getValue(String.class);
+                Picasso.get().load(link).into(rImage);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(ProductContentActivity.this, "Error Loading Image", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
     }
+
+
+    protected void onCreate1(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        rImage = findViewById(R.id.rImage);
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference();
+        DatabaseReference getImage = databaseReference.child("image");
+        getImage.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String link = dataSnapshot.getValue(String.class);
+                Picasso.get().load(link).into(rImage);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(ProductContentActivity.this, "Error Loading Image", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }

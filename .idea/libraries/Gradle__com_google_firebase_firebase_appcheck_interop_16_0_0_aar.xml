@@ -2,9 +2,7 @@
   <library name="Gradle: com.google.firebase:firebase-appcheck-interop:16.0.0@aar">
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/64f5c6ea95a34fb65ff37f4a0bf36e62/transformed/firebase-appcheck-interop-16.0.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bab19bd7aaf1bb7e590851957c6565b1/transformed/firebase-appcheck-interop-16.0.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bab19bd7aaf1bb7e590851957c6565b1/transformed/firebase-appcheck-interop-16.0.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/bab19bd7aaf1bb7e590851957c6565b1/transformed/firebase-appcheck-interop-16.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0827aff199f4932b2b99a86359de40a4/transformed/firebase-appcheck-interop-16.0.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/66d9db6126f2a7aaa55d1178a5e08bd1/transformed/firebase-appcheck-interop-16.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/66d9db6126f2a7aaa55d1178a5e08bd1/transformed/firebase-appcheck-interop-16.0.0/AndroidManifest.xml" />
