@@ -3,7 +3,11 @@ package com.example.scanner;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -14,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -50,6 +55,7 @@ public class ProductContentActivity extends AppCompatActivity {
         productcode= this.findViewById(R.id.productcode);
         productname = this.findViewById(R.id.productname);
 
+
         if (this.getIntent().getStringExtra("idnumber") != null) {
             DBR.child(this.getIntent().getStringExtra("idnumber")).get().addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
@@ -63,6 +69,8 @@ public class ProductContentActivity extends AppCompatActivity {
                         productcode.setText(Productcode.toString());
                         Productprice = value2.get("pinktax");
                         productprice.setText((Productprice.toString()));
+                        new DownloadImageFromInternet((ImageView) findViewById(R.id.rImage)).
+                                execute(value.get("image"));
                     } else {
                     }
                 }
@@ -86,7 +94,28 @@ public class ProductContentActivity extends AppCompatActivity {
             }
         });
 
-
+    }
+    private class DownloadImageFromInternet extends AsyncTask<String, Void, Bitmap> {
+        ImageView imageView;
+        public DownloadImageFromInternet(ImageView imageView) {
+            this.imageView=imageView;
+            Toast.makeText(getApplicationContext(), "Please wait, it may take a few minute...",Toast.LENGTH_SHORT).show();
+        }
+        protected Bitmap doInBackground(String... urls) {
+            String imageURL=urls[0];
+            Bitmap bimage=null;
+            try {
+                InputStream in=new java.net.URL(imageURL).openStream();
+                bimage= BitmapFactory.decodeStream(in);
+            } catch (Exception e) {
+                Log.e("Error Message", e.getMessage());
+                e.printStackTrace();
+            }
+            return bimage;
+        }
+        protected void onPostExecute(Bitmap result) {
+            imageView.setImageBitmap(result);
+        }
     }
 
 
