@@ -129,18 +129,6 @@
                             android:layout_marginStart="0dp"
                             android:layout_marginTop="0dp">
 
-                            <View
-                                android:id="@+id/rectangle_2"
-                                android:layout_width="158.86dp"
-                                android:layout_height="236dp"
-                                android:layout_marginStart="0dp"
-                                android:layout_marginTop="0dp"
-                                android:background="@drawable/rectangle_2_shape" />
-                            <ImageView
-                                android:id="@+id/rImage"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                />
 
                         </RelativeLayout>
 
@@ -204,6 +192,14 @@
                             android:layout_marginEnd="4dp"
                             android:text="TextView" />
 
+                        <View
+                            android:id="@+id/rectangle_2"
+                            android:layout_width="158.86dp"
+                            android:layout_height="236dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:background="@drawable/rectangle_2_shape" />
+
                     </RelativeLayout>
 
                     <ImageView
@@ -241,6 +237,19 @@
                         android:textAlignment="center"
                         android:textColor="#ffff"
                         android:textSize="30sp" />
+
+                    <ImageView
+                        android:id="@+id/rImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/group_11"
+                        android:layout_alignTop="@+id/group_11"
+                        android:layout_alignEnd="@+id/group_11"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginLeft="55dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="174dp"
+                        tools:srcCompat="@tools:sample/avatars" />
 
                 </RelativeLayout>
 

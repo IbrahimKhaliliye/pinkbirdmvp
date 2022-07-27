@@ -3,32 +3,45 @@ package com.example.scanner;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ProductContentActivity extends AppCompatActivity implements View.OnClickListener {
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+
+public class ProductContentActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     ListView productListview;
     ArrayList<Product> ProductList;
     ArrayAdapter<Product> arrayAdapter;
     DatabaseReference DBR;
     FirebaseDatabase DB;
-    String Productname;
-    Long Productcode,Productprice;
+    String Productname,Productprice;
+    Long Productcode;
     String idnumber;
+    ImageView rImage;
     TextView productname,productcode,productprice;
-    ImageButton backbutton, alternative;
 
 
 
@@ -42,11 +55,7 @@ public class ProductContentActivity extends AppCompatActivity implements View.On
         productprice = this.findViewById(R.id.productprice);
         productcode= this.findViewById(R.id.productcode);
         productname = this.findViewById(R.id.productname);
-        backbutton = this.findViewById(R.id.backbutton);
-        alternative = this.findViewById(R.id.alternative);
 
-        backbutton.setOnClickListener(this);
-        alternative.setOnClickListener(this);
 
         if (this.getIntent().getStringExtra("idnumber") != null) {
             DBR.child(this.getIntent().getStringExtra("idnumber")).get().addOnCompleteListener(task -> {
@@ -59,8 +68,10 @@ public class ProductContentActivity extends AppCompatActivity implements View.On
                         productname.setText(Productname);
                         Productcode = value2.get("barcode");
                         productcode.setText(Productcode.toString());
-                        Productprice = value2.get("pinktax");
+                        Productprice = value.get("pinktax");
                         productprice.setText((Productprice.toString()));
+                        new DownloadImageFromInternet((ImageView) findViewById(R.id.rImage)).
+                                execute(value.get("image"));
                     } else {
                     }
                 }
@@ -68,19 +79,68 @@ public class ProductContentActivity extends AppCompatActivity implements View.On
         }else {
             productname.setText("no value found");
         }
-
+        rImage = findViewById(R.id.rImage);
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference();
+        DatabaseReference getImage = databaseReference.child("image");
+        getImage.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String link = dataSnapshot.getValue(String.class);
+                Picasso.get().load(link).into(rImage);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(ProductContentActivity.this, "Error Loading Image", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
-
-    public void onClick(View view) {
-
-        if (view == backbutton) {
-            Intent intent = new Intent(this, ScanningActivity.class);
-            startActivity(intent);
-        } else if (view == alternative){
-            Intent intent1 = new Intent(this,MainActivity.class);
-            startActivity(intent1);
+    private class DownloadImageFromInternet extends AsyncTask<String, Void, Bitmap> {
+        ImageView imageView;
+        public DownloadImageFromInternet(ImageView imageView) {
+            this.imageView=imageView;
+            Toast.makeText(getApplicationContext(), "Please wait, it may take a few minute...",Toast.LENGTH_SHORT).show();
         }
-
+        protected Bitmap doInBackground(String... urls) {
+            String imageURL=urls[0];
+            Bitmap bimage=null;
+            try {
+                InputStream in=new java.net.URL(imageURL).openStream();
+                bimage= BitmapFactory.decodeStream(in);
+            } catch (Exception e) {
+                Log.e("Error Message", e.getMessage());
+                e.printStackTrace();
+            }
+            return bimage;
+        }
+        protected void onPostExecute(Bitmap result) {
+            imageView.setImageBitmap(result);
+        }
     }
+
+
+    protected void onCreate1(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        rImage = findViewById(R.id.rImage);
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference();
+        DatabaseReference getImage = databaseReference.child("image");
+        getImage.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String link = dataSnapshot.getValue(String.class);
+                Picasso.get().load(link).into(rImage);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(ProductContentActivity.this, "Error Loading Image", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }
+
