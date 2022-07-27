@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Scanner">
         <activity
+            android:name=".AlternativesActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProductContentActivity"
             android:exported="false" />
         <activity
