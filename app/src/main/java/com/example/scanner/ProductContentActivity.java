@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -15,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ProductContentActivity extends AppCompatActivity {
+public class ProductContentActivity extends AppCompatActivity implements View.OnClickListener {
     FirebaseAuth mAuth;
     ListView productListview;
     ArrayList<Product> ProductList;
@@ -26,6 +28,8 @@ public class ProductContentActivity extends AppCompatActivity {
     Long Productcode,Productprice;
     String idnumber;
     TextView productname,productcode,productprice;
+    ImageButton backbutton, alternative;
+
 
 
     @Override
@@ -38,6 +42,11 @@ public class ProductContentActivity extends AppCompatActivity {
         productprice = this.findViewById(R.id.productprice);
         productcode= this.findViewById(R.id.productcode);
         productname = this.findViewById(R.id.productname);
+        backbutton = this.findViewById(R.id.backbutton);
+        alternative = this.findViewById(R.id.alternative);
+
+        backbutton.setOnClickListener(this);
+        alternative.setOnClickListener(this);
 
         if (this.getIntent().getStringExtra("idnumber") != null) {
             DBR.child(this.getIntent().getStringExtra("idnumber")).get().addOnCompleteListener(task -> {
@@ -60,6 +69,18 @@ public class ProductContentActivity extends AppCompatActivity {
             productname.setText("no value found");
         }
 
+
+    }
+
+    public void onClick(View view) {
+
+        if (view == backbutton) {
+            Intent intent = new Intent(this, ScanningActivity.class);
+            startActivity(intent);
+        } else if (view == alternative){
+            Intent intent1 = new Intent(this,MainActivity.class);
+            startActivity(intent1);
+        }
 
     }
 }

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +21,7 @@ import com.google.zxing.integration.android.IntentResult;
 import java.util.HashMap;
 
 public class ScanningActivity extends AppCompatActivity  implements View.OnClickListener{
-    Button scanButton, signoutButton, productsButton;
+    ImageButton scanButton, signoutButton;
     FirebaseAuth mAuth;
     DatabaseReference DBR;
     FirebaseDatabase DB;
