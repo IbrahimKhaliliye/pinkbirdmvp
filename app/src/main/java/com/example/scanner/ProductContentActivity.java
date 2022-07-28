@@ -8,7 +8,9 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ImageView;
@@ -35,13 +37,15 @@ public class ProductContentActivity extends AppCompatActivity {
     ListView productListview;
     ArrayList<Product> ProductList;
     ArrayAdapter<Product> arrayAdapter;
-    DatabaseReference DBR;
+    DatabaseReference DBR,DBRALTS;
     FirebaseDatabase DB;
-    String Productname,Productprice;
+    String Productname,Productprice, category;
     Long Productcode;
     String idnumber;
     ImageView rImage;
     TextView productname,productcode,productprice;
+
+    ImageButton alternative;
 
 
 
@@ -52,9 +56,11 @@ public class ProductContentActivity extends AppCompatActivity {
 
         DB = FirebaseDatabase.getInstance("https://pinkbird-a0d69-default-rtdb.europe-west1.firebasedatabase.app");
         DBR = DB.getReference("products");
+        DBRALTS = DB.getReference("alternatives");
         productprice = this.findViewById(R.id.productprice);
         productcode= this.findViewById(R.id.productcode);
         productname = this.findViewById(R.id.productname);
+        alternative = this.findViewById(R.id.alternative);
 
 
         if (this.getIntent().getStringExtra("idnumber") != null) {
@@ -69,6 +75,7 @@ public class ProductContentActivity extends AppCompatActivity {
                         Productcode = value2.get("barcode");
                         productcode.setText(Productcode.toString());
                         Productprice = value.get("pinktax");
+                        category = value.get("category ");
                         productprice.setText((Productprice.toString()));
                         new DownloadImageFromInternet((ImageView) findViewById(R.id.rImage)).
                                 execute(value.get("image"));
@@ -92,6 +99,15 @@ public class ProductContentActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(ProductContentActivity.this, "Error Loading Image", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        alternative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent inten = new Intent(ProductContentActivity.this, AlternativesActivity.class);
+                inten.putExtra("category", category);
+                startActivity(inten);
             }
         });
 
