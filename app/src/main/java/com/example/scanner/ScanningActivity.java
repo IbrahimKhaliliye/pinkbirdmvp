@@ -28,18 +28,21 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     String Productname;
     String idnumber;
     TextView productname;
-
+    ImageButton about_us;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanning);
         scanButton = findViewById(R.id.scanButton);
         signoutButton = findViewById(R.id.signout);
+        about_us = findViewById(R.id.about_us);
         mAuth = FirebaseAuth.getInstance();
         DB = FirebaseDatabase.getInstance("https://pinkbird-a0d69-default-rtdb.europe-west1.firebasedatabase.app");
         DBR = DB.getReference("products");
+        about_us.setOnClickListener(this);
         scanButton.setOnClickListener(this);
         signoutButton.setOnClickListener(this);
+
 
 
 
@@ -105,13 +108,21 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     }
 
 
-    public void onClick(View view) {
+
+        public void onClick(View view) {
 
         if (view == scanButton) {
             scancode();
-        } else if (view == signoutButton){
+        }
+        else if (view == signoutButton){
             signoutFunction();
         }
+        else if (view == about_us){
+                Intent intent = new Intent(ScanningActivity.this,AboutUsActivity.class);
+                startActivity(intent);
+        }
+
+
 
     }
 }

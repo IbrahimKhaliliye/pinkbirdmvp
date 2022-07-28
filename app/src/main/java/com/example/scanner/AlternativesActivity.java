@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -31,6 +33,7 @@ public class AlternativesActivity extends AppCompatActivity {
     String idnumber;
     ImageView rImage;
     TextView productname,productcode,productprice;
+    ImageButton backbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +44,7 @@ public class AlternativesActivity extends AppCompatActivity {
         productprice = this.findViewById(R.id.productprice);
         productcode= this.findViewById(R.id.productcode);
         productname = this.findViewById(R.id.productname);
+        backbutton = this.findViewById(R.id.backbutton);
 
         Intent iin= getIntent();
         Bundle b = iin.getExtras();
@@ -68,6 +72,14 @@ public class AlternativesActivity extends AppCompatActivity {
                     }
                 });
 
+
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AlternativesActivity.this, ScanningActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

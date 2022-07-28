@@ -44,7 +44,7 @@ public class ProductContentActivity extends AppCompatActivity {
     String idnumber;
     ImageView rImage;
     TextView productname,productcode,productprice;
-
+    ImageButton backbutton;
     ImageButton alternative;
 
 
@@ -61,6 +61,7 @@ public class ProductContentActivity extends AppCompatActivity {
         productcode= this.findViewById(R.id.productcode);
         productname = this.findViewById(R.id.productname);
         alternative = this.findViewById(R.id.alternative);
+        backbutton = this.findViewById(R.id.backbutton);
 
 
         if (this.getIntent().getStringExtra("idnumber") != null) {
@@ -110,8 +111,16 @@ public class ProductContentActivity extends AppCompatActivity {
                 startActivity(inten);
             }
         });
-
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductContentActivity.this, ScanningActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
     private class DownloadImageFromInternet extends AsyncTask<String, Void, Bitmap> {
         ImageView imageView;
         public DownloadImageFromInternet(ImageView imageView) {
