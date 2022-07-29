@@ -1,9 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutUsActivity">
+    tools:context=".ScanningActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+
+        android:layout_marginTop="68dp"
+        android:layout_marginBottom="700dp"
+        android:text="Mission:"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="136dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="629dp"
+        android:text="Vision:"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="315dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="629dp"
+
+        android:text="Providing women the ability to purchase products they need without having to pay extra expenses or having difficulty finding alternatives. "
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="532dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="629dp"
+        android:text="About Us"
+        android:layout_marginLeft="150dp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="200dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="629dp"
+        android:text="We aim to raise awareness around pink tax and its presence and provide an easy, accessible way to buy alternatives or pink tax-free products."
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="532dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:layout_marginBottom="629dp"
+        android:text="Description:"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="200dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:layout_marginBottom="629dp"
+        android:text="Pinkbird is an application that aims at raising awareness among women about pink tax and its presence in their everyday life. It helps them navigate through shelf products using a search bar or a scan feature, to find alternatives in order to avoid pink tax as much as possible.  "
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="532dp" />
+
+
+    <ImageButton
+        android:id="@+id/backbutton"
+        android:layout_width="30dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/image_3"
+        android:contentDescription="image_3"
+        android:src="@drawable/image_3" />
+
+</RelativeLayout>
