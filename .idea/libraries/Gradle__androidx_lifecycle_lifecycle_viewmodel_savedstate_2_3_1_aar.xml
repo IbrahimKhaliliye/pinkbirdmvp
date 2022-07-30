@@ -1,12 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6bd89adba10627293a9436ba0cb673dd/transformed/lifecycle-viewmodel-savedstate-2.3.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fb0667501aa866eb219effb3b54f7e7e/transformed/lifecycle-viewmodel-savedstate-2.3.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d5b6f59ee0879e347692cd11715be30b/transformed/lifecycle-viewmodel-savedstate-2.3.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0da476bad6b591891c89296323bed55f/transformed/lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0da476bad6b591891c89296323bed55f/transformed/lifecycle-viewmodel-savedstate-2.3.1/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/0da476bad6b591891c89296323bed55f/transformed/lifecycle-viewmodel-savedstate-2.3.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0da476bad6b591891c89296323bed55f/transformed/lifecycle-viewmodel-savedstate-2.3.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0da476bad6b591891c89296323bed55f/transformed/lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

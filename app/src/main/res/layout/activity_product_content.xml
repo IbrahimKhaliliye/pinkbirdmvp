@@ -40,7 +40,7 @@
 <!--        android:text="Button" />-->
 <!--</LinearLayout>-->
 
-<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="wrap_content" >
     <!--
     /*
@@ -82,7 +82,7 @@
                     android:layout_height="800dp" />
 
 
-                <RelativeLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/android_large___3"
                     android:layout_width="1080px"
                     android:layout_height="2280px"
@@ -91,148 +91,90 @@
 
                     <ImageView
                         android:id="@+id/rectangle_15"
-                        android:layout_width="1080px"
-                        android:layout_height="2280px"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
+                        android:layout_width="404dp"
+                        android:layout_height="735dp"
                         android:background="#FFEADD"
                         android:contentDescription="rectangle_15"
-                        android:src="@drawable/rectangle_15" />
+                        android:src="@drawable/rectangle_15"
+                        tools:layout_editor_absoluteX="5dp"
+                        tools:layout_editor_absoluteY="0dp" />
 
                     <ImageButton
                         android:id="@+id/backbutton"
-                        android:layout_width="30dp"
-                        android:layout_height="23dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:background="@drawable/image_3"
                         android:contentDescription="image_3"
                         android:src="@drawable/image_3" />
 
 
-                    <RelativeLayout
-                        android:id="@+id/group_11"
+                    <View
+                        android:id="@+id/rectangle_25"
+                        android:layout_width="119dp"
+                        android:layout_height="316dp"
+                        android:background="@drawable/rectangle_25_shape"
+                        tools:layout_editor_absoluteX="257dp"
+                        tools:layout_editor_absoluteY="211dp" />
+
+                    <View
+                        android:id="@+id/rectangle_28"
+                        android:layout_width="170dp"
+                        android:layout_height="131dp"
+                        android:background="@drawable/rectangle_28_shape"
+                        tools:layout_editor_absoluteX="195dp"
+                        tools:layout_editor_absoluteY="33dp" />
+
+                    <View
+                        android:id="@+id/rectangle_26"
+                        android:layout_width="195dp"
+                        android:layout_height="461dp"
+                        android:background="@drawable/rectangle_26_shape"
+                        tools:layout_editor_absoluteY="408dp" />
+
+                    <TextView
+                        android:id="@+id/productname"
                         android:layout_width="wrap_content"
-                        android:layout_height="248dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="36dp"
-                        android:layout_marginTop="85dp"
-                        android:layout_marginEnd="36dp">
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/productcode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/productprice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
 
 
-                        <RelativeLayout
-                            android:id="@+id/group_3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginTop="0dp">
-
-
-                        </RelativeLayout>
-
-                        <View
-                            android:id="@+id/rectangle_25"
-                            android:layout_width="150.94dp"
-                            android:layout_height="55.93dp"
-                            android:layout_marginStart="170dp"
-                            android:layout_marginTop="62dp"
-                            android:background="@drawable/rectangle_25_shape" />
-
-                        <View
-                            android:id="@+id/rectangle_28"
-                            android:layout_width="149.48dp"
-                            android:layout_height="50.9dp"
-                            android:layout_marginStart="171dp"
-                            android:layout_marginTop="0dp"
-                            android:background="@drawable/rectangle_28_shape" />
-
-                        <View
-                            android:id="@+id/rectangle_26"
-                            android:layout_width="150.94dp"
-                            android:layout_height="106.4dp"
-                            android:layout_marginStart="170dp"
-                            android:layout_marginTop="130dp"
-                            android:background="@drawable/rectangle_26_shape" />
-
-                        <TextView
-                            android:id="@+id/productname"
-                            android:layout_width="141dp"
-                            android:layout_height="39dp"
-                            android:layout_alignStart="@+id/rectangle_28"
-                            android:layout_alignParentTop="true"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginStart="3dp"
-                            android:layout_marginTop="7dp"
-                            android:layout_marginEnd="6dp"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/productcode"
-                            android:layout_width="138dp"
-                            android:layout_height="46dp"
-                            android:layout_alignStart="@+id/rectangle_25"
-                            android:layout_alignTop="@+id/rectangle_25"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginEnd="8dp"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/productprice"
-                            android:layout_width="142dp"
-                            android:layout_height="93dp"
-                            android:layout_alignStart="@+id/rectangle_26"
-                            android:layout_alignTop="@+id/rectangle_26"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginEnd="4dp"
-                            android:text="TextView" />
-
-                        <View
-                            android:id="@+id/rectangle_2"
-                            android:layout_width="158.86dp"
-                            android:layout_height="236dp"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginTop="0dp"
-                            android:background="@drawable/rectangle_2_shape" />
-
-                    </RelativeLayout>
+                    <View
+                        android:id="@+id/rectangle_2"
+                        android:layout_width="150dp"
+                        android:layout_height="382dp"
+                        android:background="@drawable/rectangle_2_shape"
+                        tools:layout_editor_absoluteX="58dp"
+                        tools:layout_editor_absoluteY="220dp" />
 
                     <ImageView
                         android:id="@+id/logo__1__3"
-                        android:layout_width="102dp"
-                        android:layout_height="75dp"
-                        android:layout_marginStart="128dp"
-                        android:layout_marginTop="725dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:contentDescription="logo__1__3"
                         android:src="@drawable/logo__1__3" />
 
                     <ImageButton
                         android:id="@+id/alternative"
-                        android:layout_width="207dp"
-                        android:layout_height="55dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="93dp"
-                        android:layout_marginTop="433dp"
-                        android:layout_marginEnd="93dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:background="@drawable/rectangle_29_shape" />
 
                     <TextView
                         android:id="@+id/textView2"
-                        android:layout_width="166dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="114dp"
-                        android:layout_marginTop="441dp"
-                        android:layout_marginEnd="113dp"
                         android:text="Alternatives"
                         android:textAlignment="center"
                         android:textColor="#ffff"
@@ -242,16 +184,9 @@
                         android:id="@+id/rImage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignStart="@+id/group_11"
-                        android:layout_alignTop="@+id/group_11"
-                        android:layout_alignEnd="@+id/group_11"
-                        android:layout_marginStart="19dp"
-                        android:layout_marginLeft="55dp"
-                        android:layout_marginTop="40dp"
-                        android:layout_marginEnd="174dp"
                         tools:srcCompat="@tools:sample/avatars" />
 
-                </RelativeLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
                 <RelativeLayout android:id="@+id/group_13"
@@ -265,4 +200,4 @@
         </RelativeLayout>
 
     </ScrollView>
-</HorizontalScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

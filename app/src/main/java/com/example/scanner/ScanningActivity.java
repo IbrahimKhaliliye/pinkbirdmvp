@@ -21,7 +21,7 @@ import com.google.zxing.integration.android.IntentResult;
 import java.util.HashMap;
 
 public class ScanningActivity extends AppCompatActivity  implements View.OnClickListener{
-    ImageButton scanButton, signoutButton;
+    ImageButton scanButton, signoutButton, AboutUsButton, AbtPinkTaxButton;
     FirebaseAuth mAuth;
     DatabaseReference DBR;
     FirebaseDatabase DB;
@@ -35,11 +35,15 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         setContentView(R.layout.activity_scanning);
         scanButton = findViewById(R.id.scanButton);
         signoutButton = findViewById(R.id.signout);
+        AboutUsButton = findViewById(R.id.AboutUsButton);
+        AbtPinkTaxButton = findViewById(R.id.AbtPinkTaxButton);
         mAuth = FirebaseAuth.getInstance();
         DB = FirebaseDatabase.getInstance("https://pinkbird-a0d69-default-rtdb.europe-west1.firebasedatabase.app");
         DBR = DB.getReference("products");
         scanButton.setOnClickListener(this);
         signoutButton.setOnClickListener(this);
+        AboutUsButton.setOnClickListener(this);
+        AbtPinkTaxButton.setOnClickListener(this);
 
 
 
@@ -56,6 +60,20 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
     }
 
+    private void GoToAboutUS(){
+        mAuth.signOut();
+        Intent intent = new Intent(ScanningActivity.this,AboutUsActivity.class);
+
+        startActivity(intent);
+
+    }
+    private void GoToAbtPinkTax(){
+        mAuth.signOut();
+        Intent intent = new Intent(ScanningActivity.this,AbtPinkTaxActivity.class);
+
+        startActivity(intent);
+
+    }
 
 
     private void scancode(){
@@ -111,6 +129,10 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
             scancode();
         } else if (view == signoutButton){
             signoutFunction();
+        } else if (view == AboutUsButton){
+            GoToAboutUS();
+        } else if (view == AbtPinkTaxButton){
+            GoToAbtPinkTax();
         }
 
     }
