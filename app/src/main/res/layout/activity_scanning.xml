@@ -1,5 +1,8 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="wrap_content" >
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <!--
     /*
      *	This content is generated from the API File Info.
@@ -17,177 +20,156 @@
     -->
 
 
-            <RelativeLayout
-                android:id="@+id/page_scanning_activity_ek1"
-                android:layout_width="1080px"
-                android:layout_height="2280px"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp">
+    <ImageView
+        android:id="@+id/rectangle_15"
+        android:layout_width="410dp"
+        android:layout_height="846dp"
+        android:background="#FFEADD"
+        android:contentDescription="rectangle_15"
+        android:src="@drawable/rectangle_15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
-                <View
-                    android:id="@+id/bg_scanning_activity_ek2"
-                    android:layout_width="360dp"
-                    android:layout_height="800dp"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="0dp" />
+    <ImageButton
+        android:id="@+id/signout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="160dp"
+        android:contentDescription="rectangle_22"
+        android:src="@drawable/rectangle_22"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
-                <ImageButton
-                    android:id="@+id/rectangle_15"
-                    android:layout_width="1080px"
-                    android:layout_height="2280px"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="0dp"
-                    android:background="#FFEADD"
-                    android:contentDescription="rectangle_15"
-                    android:src="@drawable/rectangle_15" />
+    <ImageButton
+        android:id="@+id/AbtPinkTaxButton"
+        android:layout_width="wrap_content"
+        android:layout_height="69dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="rectangle_20"
+        android:src="@drawable/rectangle_20"
+        app:layout_constraintBottom_toTopOf="@+id/AboutUsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
-                <ImageButton
-                    android:id="@+id/rectangle_5"
-                    android:layout_width="194dp"
-                    android:layout_height="41dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="102dp"
-                    android:layout_marginTop="337dp"
-                    android:layout_marginEnd="98dp"
-                    android:contentDescription="rectangle_20"
-                    android:src="@drawable/rectangle_20" />
+    <ImageButton
+        android:id="@+id/scanButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="rectangle_20"
+        android:src="@drawable/rectangle_20"
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_15"
+        app:layout_constraintVertical_bias="1.0" />
 
-                <ImageButton
-                    android:id="@+id/scanButton"
-                    android:layout_width="194dp"
-                    android:layout_height="41dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="97dp"
-                    android:layout_marginTop="254dp"
-                    android:layout_marginEnd="103dp"
-                    android:contentDescription="rectangle_20"
-                    android:src="@drawable/rectangle_20" />
+    <ImageButton
+        android:id="@+id/AboutUsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="69dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="rectangle_22"
+        android:src="@drawable/rectangle_22"
+        app:layout_constraintBottom_toTopOf="@+id/signout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
-                <ImageButton
-                    android:id="@+id/signout"
-                    android:layout_width="194dp"
-                    android:layout_height="41dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="95dp"
-                    android:layout_marginTop="564dp"
-                    android:layout_marginEnd="102dp"
-                    android:contentDescription="rectangle_22"
-                    android:src="@drawable/rectangle_22" />
+    <ImageButton
+        android:id="@+id/rectangle_5"
+        android:layout_width="wrap_content"
+        android:layout_height="69dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="rectangle_20"
+        android:src="@drawable/rectangle_20"
+        app:layout_constraintBottom_toTopOf="@+id/AbtPinkTaxButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
-                <ImageButton
-                    android:id="@+id/AbtPinkTaxButton"
-                    android:layout_width="194dp"
-                    android:layout_height="41dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="97dp"
-                    android:layout_marginTop="436dp"
-                    android:layout_marginEnd="103dp"
-                    android:contentDescription="rectangle_20"
-                    android:src="@drawable/rectangle_20" />
+    <ImageView
+        android:id="@+id/logo_1_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="logo_1_3"
+        android:src="@drawable/logo__1__1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.128" />
 
-                <ImageButton
-                    android:id="@+id/AboutUsButton"
-                    android:layout_width="194dp"
-                    android:layout_height="41dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="98dp"
-                    android:layout_marginTop="502dp"
-                    android:layout_marginEnd="101dp"
-                    android:contentDescription="rectangle_22"
-                    android:src="@drawable/rectangle_22" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scan"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/scanButton"
+        app:layout_constraintEnd_toEndOf="@+id/scanButton"
+        app:layout_constraintStart_toStartOf="@+id/scanButton"
+        app:layout_constraintTop_toTopOf="@+id/scanButton"
+        app:layout_constraintVertical_bias="0.379" />
 
-                <ImageView
-                    android:id="@+id/logo_1_3"
-                    android:layout_width="157dp"
-                    android:layout_height="89dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="116dp"
-                    android:layout_marginTop="60dp"
-                    android:layout_marginEnd="124dp"
-                    android:contentDescription="logo_1_3"
-                    android:src="@drawable/logo__1__1" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_5"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_5"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_5"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_5" />
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="82dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="154dp"
-                    android:layout_marginTop="253dp"
-                    android:layout_marginEnd="158dp"
-                    android:text="Scan"
-                    android:textAlignment="center"
-                    android:textSize="30sp" />
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About Pink Tax"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/AbtPinkTaxButton"
+        app:layout_constraintEnd_toEndOf="@+id/AbtPinkTaxButton"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="@+id/AbtPinkTaxButton"
+        app:layout_constraintTop_toTopOf="@+id/AbtPinkTaxButton"
+        app:layout_constraintVertical_bias="0.344" />
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="82dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="158dp"
-                    android:layout_marginTop="339dp"
-                    android:layout_marginEnd="155dp"
-                    android:text="Upload"
-                    android:textAlignment="center"
-                    android:textSize="25sp" />
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About Us"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/AboutUsButton"
+        app:layout_constraintEnd_toEndOf="@+id/AboutUsButton"
+        app:layout_constraintStart_toStartOf="@+id/AboutUsButton"
+        app:layout_constraintTop_toTopOf="@+id/AboutUsButton" />
 
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="134dp"
-                    android:layout_marginTop="442dp"
-                    android:layout_marginEnd="134dp"
-                    android:text="About Pink Tax"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="149dp"
-                    android:layout_marginTop="505dp"
-                    android:layout_marginEnd="144dp"
-                    android:text="About Us"
-                    android:textAlignment="center"
-                    android:textSize="23sp" />
-
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="164dp"
-                    android:layout_marginTop="574dp"
-                    android:layout_marginEnd="171dp"
-                    android:text="Log Out"
-                    android:textAlignment="center" />
-
-            </RelativeLayout>
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/signout"
+        app:layout_constraintEnd_toEndOf="@+id/signout"
+        app:layout_constraintStart_toStartOf="@+id/signout"
+        app:layout_constraintTop_toTopOf="@+id/signout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

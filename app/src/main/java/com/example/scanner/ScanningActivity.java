@@ -61,14 +61,12 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     }
 
     private void GoToAboutUS(){
-        mAuth.signOut();
         Intent intent = new Intent(ScanningActivity.this,AboutUsActivity.class);
 
         startActivity(intent);
 
     }
     private void GoToAbtPinkTax(){
-        mAuth.signOut();
         Intent intent = new Intent(ScanningActivity.this,AbtPinkTaxActivity.class);
 
         startActivity(intent);
