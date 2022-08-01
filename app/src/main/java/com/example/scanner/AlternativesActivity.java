@@ -60,10 +60,10 @@ public class AlternativesActivity extends AppCompatActivity {
         Bundle b = iin.getExtras();
         category = (String) b.get("category");
 
-        DBRALTS.orderByChild("category").equalTo(category).addValueEventListener(new ValueEventListener() {
+        ValueEventListener category = DBRALTS.orderByChild("category").equalTo(this.category).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot data: snapshot.getChildren()){
+                for (DataSnapshot data : snapshot.getChildren()) {
                     Product product = data.getValue(Product.class);
                     new DownloadImageFromInternet((ImageView) findViewById(R.id.rImage)).
                             execute(product.getImage());
@@ -71,11 +71,19 @@ public class AlternativesActivity extends AppCompatActivity {
 
                 }
             }
+            
+            public void onDataChange1(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Product product = snapshot.getValue(Product.class);
+                    if (product.getCategory().equals(AlternativesActivity.this.category)) {
+                        {
+                            productname.setText(product.getProductname());
+                            productcode.setText(product.getBarcode().toString());
+                            productprice.setText((product.getPinktax()));
 
-            public void onDataChange1 (@NonNull DataSnapshot dataSnapshot){
-                String Productname = dataSnapshot.child("productname").getValue(String.class);
-                String Productprice = dataSnapshot.child("productprice").getValue(String.class);
-                Long productcode = dataSnapshot.child("productcode").getValue(Long.class);
+                        }
+                    }
+                }
             }
 
 
@@ -84,7 +92,6 @@ public class AlternativesActivity extends AppCompatActivity {
 
             }
         });
-
 
 
     }
