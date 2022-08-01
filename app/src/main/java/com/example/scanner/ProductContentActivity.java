@@ -112,7 +112,7 @@ public class ProductContentActivity extends AppCompatActivity {
         });
 
     }
-    private class DownloadImageFromInternet extends AsyncTask<String, Void, Bitmap> {
+    public class DownloadImageFromInternet extends AsyncTask<String, Void, Bitmap> {
         ImageView imageView;
         public DownloadImageFromInternet(ImageView imageView) {
             this.imageView=imageView;
@@ -133,29 +133,6 @@ public class ProductContentActivity extends AppCompatActivity {
         protected void onPostExecute(Bitmap result) {
             imageView.setImageBitmap(result);
         }
-    }
-
-
-    protected void onCreate1(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        rImage = findViewById(R.id.rImage);
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference();
-        DatabaseReference getImage = databaseReference.child("image");
-        getImage.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String link = dataSnapshot.getValue(String.class);
-                Picasso.get().load(link).into(rImage);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(ProductContentActivity.this, "Error Loading Image", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
 }

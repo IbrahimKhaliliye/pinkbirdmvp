@@ -5,7 +5,7 @@ public class Product {
     private String pinktax;
     private String productname;
     private String category;
-    private String imageLink;
+    private String image;
 
 
     public Product (){
@@ -16,7 +16,7 @@ public class Product {
         this.pinktax = pinktax;
         this.productname = productname;
         this.category=category;
-        this.imageLink=imageLink;
+        this.image=imageLink;
 
     }
     public Long getBarcode() {
@@ -35,12 +35,12 @@ public class Product {
         this.category = category;
     }
 
-    public String getImageLink() {
-        return imageLink;
+    public String getImage() {
+        return image;
     }
 
-    public void setImageLink(String imageLink) {
-        this.imageLink = imageLink;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getPinktax() {
