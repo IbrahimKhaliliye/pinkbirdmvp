@@ -47,8 +47,8 @@ public class RetrivingDataActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 productsList.clear();
 
-                for (DataSnapshot studentDatasnap : dataSnapshot.getChildren()){
-                    Products products = studentDatasnap.getValue(Products.class);
+                for (DataSnapshot productDatasnap : dataSnapshot.getChildren()){
+                    Products products = productDatasnap.getValue(Products.class);
                     productsList.add(products);
                 }
 

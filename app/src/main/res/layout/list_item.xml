@@ -11,45 +11,65 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="151dp"
-        android:layout_height="234dp"
+        android:layout_width="156dp"
+        android:layout_height="158dp"
+        android:layout_marginTop="52dp"
         android:layout_weight="1"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteX="-3dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvProdName"
-        android:layout_width="wrap_content"
-        android:layout_height="49dp"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="1dp"
         android:gravity="center"
         android:text="Product name"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="185dp"
-        tools:layout_editor_absoluteY="37dp" />
+        android:textColor="#D10F79"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvCategory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvBarcode"
-        android:layout_width="141dp"
-        android:layout_height="67dp"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="537dp"
         android:text="Barcode"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="137dp" />
+        android:textColor="#D10F79"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/tvCategory" />
 
     <TextView
         android:id="@+id/tvCategory"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="16dp"
         android:gravity="left"
-        android:text="category"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="100dp" />
+        android:text="Category"
+        android:textColor="#D10F79"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvBarcode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/tvProdName" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
