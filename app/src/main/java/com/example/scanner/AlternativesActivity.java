@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -32,6 +33,7 @@ import java.util.HashMap;
 
 public class AlternativesActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
+    ImageButton backbutton;
     ListView productListview;
     ArrayList<Product> ProductList;
     ArrayAdapter<Product> arrayAdapter;
@@ -55,10 +57,15 @@ public class AlternativesActivity extends AppCompatActivity {
         productprice = this.findViewById(R.id.productprice);
         productcode = this.findViewById(R.id.productcode);
         productname = this.findViewById(R.id.productname);
+        backbutton= findViewById(R.id.backbutton);
+        backbutton.setOnClickListener(this::onClick);
+
 
         Intent iin = getIntent();
         Bundle b = iin.getExtras();
         category = (String) b.get("category");
+
+
 
         ValueEventListener category = DBRALTS.orderByChild("category").equalTo(this.category).addValueEventListener(new ValueEventListener() {
             @Override
@@ -115,6 +122,15 @@ public class AlternativesActivity extends AppCompatActivity {
         }
         protected void onPostExecute(Bitmap result) {
             imageView.setImageBitmap(result);
+        }
+    }
+
+
+    public void onClick(View view) {
+
+        if (view == backbutton) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }
     }
 

@@ -45,7 +45,7 @@ public class ProductContentActivity extends AppCompatActivity {
     ImageView rImage;
     TextView productname,productcode,productprice;
 
-    ImageButton alternative;
+    ImageButton alternative, backbutton;
 
 
 
@@ -61,6 +61,8 @@ public class ProductContentActivity extends AppCompatActivity {
         productcode= this.findViewById(R.id.productcode);
         productname = this.findViewById(R.id.productname);
         alternative = this.findViewById(R.id.alternative);
+        backbutton = findViewById(R.id.backbutton);
+        backbutton.setOnClickListener(this::onClick);
 
 
         if (this.getIntent().getStringExtra("idnumber") != null) {
@@ -135,5 +137,13 @@ public class ProductContentActivity extends AppCompatActivity {
         }
     }
 
+
+    public void onClick(View view) {
+
+        if (view == backbutton) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+    }
 }
 

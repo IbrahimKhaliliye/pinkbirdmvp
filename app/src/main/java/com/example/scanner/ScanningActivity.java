@@ -21,7 +21,7 @@ import com.google.zxing.integration.android.IntentResult;
 import java.util.HashMap;
 
 public class ScanningActivity extends AppCompatActivity  implements View.OnClickListener{
-    ImageButton scanButton, signoutButton, AboutUsButton, AbtPinkTaxButton;
+    ImageButton scanButton, signoutButton, AboutUsButton, AbtPinkTaxButton, backbutton;;
     FirebaseAuth mAuth;
     DatabaseReference DBR;
     FirebaseDatabase DB;
@@ -35,6 +35,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         setContentView(R.layout.activity_scanning);
         scanButton = findViewById(R.id.scanButton);
         signoutButton = findViewById(R.id.signout);
+        backbutton= findViewById(R.id.backbutton);
         AboutUsButton = findViewById(R.id.AboutUsButton);
         AbtPinkTaxButton = findViewById(R.id.AbtPinkTaxButton);
         mAuth = FirebaseAuth.getInstance();
@@ -44,6 +45,8 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         signoutButton.setOnClickListener(this);
         AboutUsButton.setOnClickListener(this);
         AbtPinkTaxButton.setOnClickListener(this);
+        backbutton.setOnClickListener(this);
+
 
 
 
@@ -131,7 +134,9 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
             GoToAboutUS();
         } else if (view == AbtPinkTaxButton){
             GoToAbtPinkTax();
-        }
+        } else if (view == backbutton) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
 
     }
-}
+}}
