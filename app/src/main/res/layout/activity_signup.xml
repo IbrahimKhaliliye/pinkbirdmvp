@@ -73,9 +73,10 @@
     <ImageView
         android:id="@+id/rectangle_8"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="#FFEADD"
         android:contentDescription="rectangle_background"
+        android:singleLine="true"
         android:src="@drawable/rectangle_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,8 +99,10 @@
         android:background="@drawable/rectangle_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_1_1" />
+        app:layout_constraintTop_toBottomOf="@+id/logo_1_1"
+        app:layout_constraintVertical_bias="0.381" />
 
     <EditText
         android:id="@+id/name"
@@ -108,6 +111,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:singleLine="true"
+
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"
@@ -142,6 +147,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:singleLine="true"
+
         android:contentDescription="rectangle_10_ek1"
         android:hint="Email Address"
         android:src="@drawable/rectangle_10_ek1"
@@ -159,6 +166,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:singleLine="true"
         android:contentDescription="rectangle_13"
         android:hint="Password"
         android:src="@drawable/rectangle_13"
@@ -173,6 +181,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:singleLine="true"
+
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"

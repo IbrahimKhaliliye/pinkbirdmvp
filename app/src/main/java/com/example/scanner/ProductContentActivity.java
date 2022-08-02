@@ -77,7 +77,7 @@ public class ProductContentActivity extends AppCompatActivity {
                         Productcode = value2.get("barcode");
                         productcode.setText(Productcode.toString());
                         Productprice = value.get("pinktax");
-                        category = value.get("category ");
+                        category = value.get("category");
                         productprice.setText((Productprice.toString()));
                         new DownloadImageFromInternet((ImageView) findViewById(R.id.rImage)).
                                 execute(value.get("image"));

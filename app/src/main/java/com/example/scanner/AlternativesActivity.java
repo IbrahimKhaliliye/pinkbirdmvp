@@ -43,7 +43,9 @@ public class AlternativesActivity extends AppCompatActivity {
     Long Productcode;
     String idnumber;
     ImageView rImage;
-    TextView productname,productcode,productprice;
+    TextView productname;
+    TextView productcode;
+    TextView productprice;
 
 
     @Override
@@ -72,26 +74,16 @@ public class AlternativesActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot data : snapshot.getChildren()) {
                     Product product = data.getValue(Product.class);
+                    productname.setText(product.getProductname());
+                    productcode.setText(product.getBarcode().toString());
+                    productprice.setText(product.getProductprice());
                     new DownloadImageFromInternet((ImageView) findViewById(R.id.rImage)).
                             execute(product.getImage());
 
 
                 }
             }
-            
-            public void onDataChange1(DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Product product = snapshot.getValue(Product.class);
-                    if (product.getCategory().equals(AlternativesActivity.this.category)) {
-                        {
-                            productname.setText(product.getProductname());
-                            productcode.setText(product.getBarcode().toString());
-                            productprice.setText((product.getPinktax()));
 
-                        }
-                    }
-                }
-            }
 
 
             @Override
@@ -129,7 +121,7 @@ public class AlternativesActivity extends AppCompatActivity {
     public void onClick(View view) {
 
         if (view == backbutton) {
-            Intent intent = new Intent(this, ProductContentActivity.class);
+            Intent intent = new Intent(this, ScanningActivity.class);
             startActivity(intent);
         }
     }

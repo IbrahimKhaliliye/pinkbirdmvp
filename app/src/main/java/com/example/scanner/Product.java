@@ -4,6 +4,7 @@ public class Product {
     private Long barcode;
     private String pinktax;
     private String productname;
+    private String productprice;
     private String category;
     private String image;
 
@@ -11,11 +12,12 @@ public class Product {
     public Product (){
 
     }
-    public Product (Long barcode,String pinktax,String productname,String category,String imageLink ){
+    public Product (Long barcode,String pinktax,String productname,String category,String imageLink, String price ){
         this.barcode = barcode;
         this.pinktax = pinktax;
         this.productname = productname;
         this.category=category;
+        this.productprice=price;
         this.image=imageLink;
 
     }
@@ -54,6 +56,10 @@ public class Product {
     public String getProductname() {
         return productname;
     }
+
+    public String getProductprice(){return productprice;}
+
+
 
     public void setProductname(String productname) {
         this.productname = productname;
