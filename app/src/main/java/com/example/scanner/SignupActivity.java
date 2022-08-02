@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SignupActivity extends AppCompatActivity implements View.OnClickListener {
     EditText name, email, password, city;
-    ImageButton signup, backbutton;
+    ImageButton signup;
     FirebaseAuth mAuth;
 
     @Override
@@ -29,10 +29,8 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         signup = findViewById(R.id.signup);
-        backbutton= findViewById(R.id.backbutton);
         mAuth = FirebaseAuth.getInstance();
         signup.setOnClickListener(this);
-        backbutton.setOnClickListener(this);
     }
 
     public boolean Is_password_strong(String password) {
@@ -63,12 +61,12 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                                Intent intent = new Intent(SignupActivity.this, ScanningActivity.class);
                                 startActivity(intent);
                             } else {
 
-                                Toast.makeText(SignupActivity.this, "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignupActivity.this, task.getException().getMessage(),
+                                        Toast.LENGTH_LONG).show();
                             }
                         }
                     });
@@ -80,17 +78,10 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
         if (view == signup) {
             String user_password = password.getText().toString();
-            if (Is_password_strong(user_password)) {
-                createAccount(email.getText().toString(), password.getText().toString());
-            }
+            createAccount(email.getText().toString(), password.getText().toString());
 
-            else {
-                Toast.makeText(this, "weak password\n make sure you have\n 1 uppercase\n 1 lowercase\n 1 number\n special\n ", Toast.LENGTH_SHORT).show();
-            }
-        }
-        else if (view == backbutton) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+
+
         }
     }
 }
