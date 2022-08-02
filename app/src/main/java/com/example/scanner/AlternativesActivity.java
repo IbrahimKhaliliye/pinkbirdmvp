@@ -1,5 +1,6 @@
 package com.example.scanner;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -26,11 +27,13 @@ public class AlternativesActivity extends AppCompatActivity {
     ArrayAdapter<Product> arrayAdapter;
     DatabaseReference DBR,DBRALTS;
     FirebaseDatabase DB;
-    String Productname,Productprice, category;
+    String Productname,Productprice, category, getProductname, getCategory;
     Long Productcode;
     String idnumber;
     ImageView rImage;
     TextView productname,productcode,productprice;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,26 +50,32 @@ public class AlternativesActivity extends AppCompatActivity {
         category = (String) b.get("category");
 
 
-        DBRALTS
-                .addListenerForSingleValueEvent(new ValueEventListener() {
+        DBRALTS.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            Product product = snapshot.getValue(Product.class);
-                            if(product.getCategory().equals(category)){
-                                {
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        {
+                            for (DataSnapshot data : snapshot.getChildren()) {
+
+                                Product product = new Product ();
+
+                                if(product.getCategory().equals(category)){
+                                    {
                                         productname.setText(product.getProductname());
                                         productcode.setText(product.getBarcode().toString());
                                         productprice.setText((product.getPinktax()));
 
+                                    }
                                 }
                             }
                         }
                     }
+
                     @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                    public void onCancelled(@NonNull DatabaseError error) {
+
                     }
                 });
+
 
 
 

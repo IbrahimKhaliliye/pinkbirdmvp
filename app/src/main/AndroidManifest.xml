@@ -15,6 +15,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Scanner">
         <activity
+            android:name=".RetrivingDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RetrieveData"
+            android:exported="false" />
+        <activity
+            android:name=".InsertingData"
+            android:exported="false" />
+        <activity
             android:name=".AlternativesActivity"
             android:exported="false" />
         <activity

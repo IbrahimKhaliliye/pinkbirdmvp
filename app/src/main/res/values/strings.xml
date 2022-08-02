@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">scanner</string>
+
+    <array name="categories">
+        <item>Pink-taxed</item>
+        <item>Non pink-taxed</item>
+    </array>
+
 </resources>

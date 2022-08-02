@@ -18,8 +18,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-import java.util.HashMap;
-
 public class ScanningActivity extends AppCompatActivity  implements View.OnClickListener{
     ImageButton scanButton, signoutButton;
     FirebaseAuth mAuth;
@@ -28,6 +26,10 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     String Productname;
     String idnumber;
     TextView productname;
+    ImageButton btnInsertData;
+    ImageButton btnRetrieveData;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +43,28 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         scanButton.setOnClickListener(this);
         signoutButton.setOnClickListener(this);
 
+        btnInsertData = findViewById(R.id.btnInsertData);
+        btnRetrieveData = findViewById(R.id.btnRetrieveData);
 
+        btnInsertData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ScanningActivity.this, InsertingData.class));
+
+            }
+        });
+
+        btnRetrieveData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ScanningActivity.this, RetrivingDataActivity.class));
+
+            }
+        });
 
     }
+
+
     private void signoutFunction(){
         mAuth.signOut();
         Intent intent = new Intent(ScanningActivity.this,MainActivity.class);
