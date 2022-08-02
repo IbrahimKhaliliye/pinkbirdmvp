@@ -21,8 +21,10 @@ import com.google.zxing.integration.android.IntentResult;
 import java.util.HashMap;
 
 public class ScanningActivity extends AppCompatActivity  implements View.OnClickListener{
-    ImageButton scanButton, signoutButton, AboutUsButton, AbtPinkTaxButton;;
+    ImageButton scanButton, signoutButton, AboutUsButton, AbtPinkTaxButton;
+    ImageButton btnInsertData;
     FirebaseAuth mAuth;
+
     DatabaseReference DBR;
     FirebaseDatabase DB;
     String Productname;
@@ -37,6 +39,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         signoutButton = findViewById(R.id.signout);
         AboutUsButton = findViewById(R.id.AboutUsButton);
         AbtPinkTaxButton = findViewById(R.id.AbtPinkTaxButton);
+        btnInsertData = findViewById(R.id.rectangle_5);
         mAuth = FirebaseAuth.getInstance();
         DB = FirebaseDatabase.getInstance("https://pinkbird-a0d69-default-rtdb.europe-west1.firebasedatabase.app");
         DBR = DB.getReference("products");
@@ -45,7 +48,15 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         AboutUsButton.setOnClickListener(this);
         AbtPinkTaxButton.setOnClickListener(this);
 
-    }
+
+           btnInsertData.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                   startActivity(new Intent(ScanningActivity.this,InsertingData.class));
+               }
+           });
+        }
+
     private void signoutFunction(){
         mAuth.signOut();
         Intent intent = new Intent(ScanningActivity.this,MainActivity.class);
@@ -128,7 +139,8 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         } else if (view == AboutUsButton){
             GoToAboutUS();
         } else if (view == AbtPinkTaxButton){
-            GoToAbtPinkTax();
+            GoToAbtPinkTax();}
 
-    }
+
+
 }}
