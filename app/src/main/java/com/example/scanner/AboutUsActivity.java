@@ -14,13 +14,16 @@ public class AboutUsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
         backbutton = findViewById(R.id.backbutton);
+        backbutton.setOnClickListener(this::onClick);
 
     }
+
+
 
     public void onClick(View view) {
 
         if (view == backbutton) {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, ScanningActivity.class);
             startActivity(intent);
         }
     }

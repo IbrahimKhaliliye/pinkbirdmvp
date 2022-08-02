@@ -141,7 +141,7 @@ public class ProductContentActivity extends AppCompatActivity {
     public void onClick(View view) {
 
         if (view == backbutton) {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, ScanningActivity.class);
             startActivity(intent);
         }
     }

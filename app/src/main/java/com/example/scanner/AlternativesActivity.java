@@ -129,7 +129,7 @@ public class AlternativesActivity extends AppCompatActivity {
     public void onClick(View view) {
 
         if (view == backbutton) {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, ProductContentActivity.class);
             startActivity(intent);
         }
     }
