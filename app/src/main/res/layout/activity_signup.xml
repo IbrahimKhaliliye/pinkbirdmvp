@@ -112,6 +112,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:singleLine="true"
+        android:fontFamily="@font/bold"
 
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
@@ -142,6 +143,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:fontFamily="@font/bold"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="16dp"
@@ -163,6 +165,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:fontFamily="@font/bold"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -182,7 +185,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:singleLine="true"
-
+        android:fontFamily="@font/bold"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -226,14 +229,15 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:fontFamily="@font/bold"
         android:text="Sign Up"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/signup"
         app:layout_constraintEnd_toEndOf="@+id/signup"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="@+id/signup"
         app:layout_constraintTop_toTopOf="@+id/signup"
-        app:layout_constraintVertical_bias="0.388" />
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

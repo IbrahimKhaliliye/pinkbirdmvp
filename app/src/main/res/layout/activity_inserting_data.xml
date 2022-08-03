@@ -24,9 +24,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/regular"
         android:gravity="center"
-        android:text="Inserting products"
+        android:text="Uploading products"
         android:textColor="#000000"
         android:textSize="45sp"
         app:layout_constraintTop_toTopOf="parent"
@@ -38,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/regular"
         android:layout_marginEnd="12dp"
         android:hint="Enter product name"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/regular"
         android:layout_marginEnd="12dp"
         android:hint="Enter price"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,6 +67,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="12dp"
+        android:fontFamily="@font/regular"
         android:hint="Enter serial number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,6 +81,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="12dp"
+
         android:entries="@array/categories"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,66 +96,82 @@
         android:layout_width="369dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="184dp"
         android:layout_marginEnd="12dp"
+        android:background="@drawable/rectangle_20"
         android:text="Add Product"
         android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerCategory" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCategory"
+        app:layout_constraintVertical_bias="0.101" />
 
     <ImageButton
         android:id="@+id/btnUpload"
-        android:layout_width="190dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="32dp"
         android:layout_weight="1"
+        android:background="@drawable/rectangle_20"
         android:text="Upload "
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerCategory" />
 
     <ImageButton
         android:id="@+id/btnChoose"
-        android:layout_width="181dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
         android:layout_weight="1"
+        android:background="@drawable/rectangle_20"
         android:text="Choose image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerCategory" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpload" />
 
     <TextView
         android:id="@+id/UploadImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/regular"
         android:text="Upload image"
         app:layout_constraintBottom_toBottomOf="@+id/btnUpload"
         app:layout_constraintEnd_toEndOf="@+id/btnUpload"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="@+id/btnUpload"
-        app:layout_constraintTop_toTopOf="@+id/btnUpload" />
+        app:layout_constraintTop_toTopOf="@+id/btnUpload"
+        app:layout_constraintVertical_bias="0.296" />
 
     <TextView
         android:id="@+id/Chooseimagetv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/regular"
         android:text="Choose from gallery"
         app:layout_constraintBottom_toBottomOf="@+id/btnChoose"
         app:layout_constraintEnd_toEndOf="@+id/btnChoose"
-        app:layout_constraintStart_toEndOf="@+id/btnUpload"
-        app:layout_constraintTop_toTopOf="@+id/btnChoose" />
+        app:layout_constraintStart_toStartOf="@+id/btnChoose"
+        app:layout_constraintTop_toTopOf="@+id/btnChoose"
+        app:layout_constraintVertical_bias="0.444" />
 
     <TextView
         android:id="@+id/addprodtv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/regular"
         android:text="Add product"
         app:layout_constraintBottom_toBottomOf="@+id/btnInsertData"
         app:layout_constraintEnd_toEndOf="@+id/btnInsertData"
         app:layout_constraintStart_toStartOf="@+id/btnInsertData"
-        app:layout_constraintTop_toTopOf="@+id/btnInsertData" />
+        app:layout_constraintTop_toTopOf="@+id/btnInsertData"
+        app:layout_constraintVertical_bias="0.392" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">scanner</string>
-    <array name="categories">
+    <array name="categories"
+        fontFamily="@font/regular"   >
         <item>Pink-taxed</item>
         <item>Non pink-taxed</item>
+
     </array>
+
 </resources>
