@@ -76,9 +76,10 @@ public class AlternativesActivity extends AppCompatActivity {
                     Product product = data.getValue(Product.class);
                     productname.setText(product.getProductname());
                     productcode.setText(product.getBarcode().toString());
-                    productprice.setText(product.getProductprice());
+                    productprice.setText(product.getPrice());
+
                     new DownloadImageFromInternet((ImageView) findViewById(R.id.rImage)).
-                            execute(product.getImage());
+                            execute(product.getImageLink());
 
 
                 }
