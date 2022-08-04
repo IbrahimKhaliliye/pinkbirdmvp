@@ -80,7 +80,7 @@ public class ProductContentActivity extends AppCompatActivity {
                         category = value.get("category");
                         productprice.setText((Productprice.toString()));
                         new DownloadImageFromInternet((ImageView) findViewById(R.id.rImage)).
-                                execute(value.get("image"));
+                                execute(value.get("imageLink"));
                     } else {
                     }
                 }
