@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/pinkbird_logo"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/nav_cycle"
+            android:icon="@drawable/pinkbird_logo"
+            android:title="Cycling" />
+
+        <item
+            android:id="@+id/nav_bus"
+            android:icon="@drawable/pinkbird_logo"
+            android:title="Bus" />
+
+    </group>
+
+    <item android:title="Profile">
+
+        <menu>
+
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_login"
+                    android:icon="@drawable/login_icon"
+                    android:title="Login" />
+
+                
+
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/logout_icon"
+                    android:title="Logout" />
+            </group>
+        </menu>
+    </item>
+
+
+</menu>
