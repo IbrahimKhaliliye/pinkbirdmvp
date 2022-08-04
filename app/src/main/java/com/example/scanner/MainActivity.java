@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (sign_in == view) {
             signin(email.getText().toString(), password.getText().toString());
 
+
         }
         if (sign_up == view) {
             Intent intent1 = new Intent(this, SignupActivity.class);

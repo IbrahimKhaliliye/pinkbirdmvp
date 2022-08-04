@@ -11,9 +11,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -26,8 +28,9 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 import java.util.HashMap;
+import java.util.Scanner;
 
-public class ScanningActivity extends AppCompatActivity  implements View.OnClickListener{
+public class ScanningActivity extends AppCompatActivity implements View.OnClickListener  {
     ImageButton scanButton, signoutButton, AboutUsButton, AbtPinkTaxButton;
     ImageButton btnInsertData;
     FirebaseAuth mAuth;
@@ -36,11 +39,8 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     String Productname;
     String idnumber;
     TextView productname;
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    Toolbar toolbar;
-    Menu menu;
-    TextView textView;
+    public DrawerLayout drawerLayout;
+    public ActionBarDrawerToggle actionBarDrawerToggle;
 
 
     /*---------------------Hooks------------------------*/
@@ -49,71 +49,61 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanning);
         scanButton = findViewById(R.id.scanButton);
-        signoutButton = findViewById(R.id.signout);
-        AboutUsButton = findViewById(R.id.AboutUsButton);
-        AbtPinkTaxButton = findViewById(R.id.AbtPinkTaxButton);
+
         btnInsertData = findViewById(R.id.rectangle_5);
-        drawerLayout=findViewById(R.id.drawer_layout);
-        navigationView=findViewById(R.id.nav_view);
-        textView=findViewById(R.id.textView);
         mAuth = FirebaseAuth.getInstance();
         DB = FirebaseDatabase.getInstance("https://pinkbird-a0d69-default-rtdb.europe-west1.firebasedatabase.app");
         DBR = DB.getReference("products");
         scanButton.setOnClickListener(this);
-        signoutButton.setOnClickListener(this);
-        AboutUsButton.setOnClickListener(this);
-        AbtPinkTaxButton.setOnClickListener(this);
 
 
-        navigationView.bringToFront();
-        ActionBarDrawerToggle toggle=new
-                ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.nav_home);
+        // drawer layout instance to toggle the menu icon to open
+        // drawer and back button to close drawer
+        drawerLayout = findViewById(R.id.my_drawer_layout);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
 
-        @Override
-        public void onBackPressed(){
-            if(drawerLayout.isDrawerOpen(GravityCompat.START)){
-                drawerLayout.closeDrawer(GravityCompat.START);
-            }
-            else
-            {super.onBackPressed();
-            }
+        // pass the Open and Close toggle for the drawer layout listener
+        // to toggle the button
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+
+        // to make the Navigation drawer icon always appear on the action bar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
+
+       btnInsertData.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               startActivity(new Intent(ScanningActivity.this,InsertingData.class));
+           }
+       });
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
         }
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-            switch (menuItem.getItemId()) {
-                case R.id.nav_home: break; case R.id.nav_bus:
-                    Intent intent = new Intent(ScanningActivity.this, Bus.class);
-                    startActivity(intent);
-                    break;
-                case R.id.nav_login: menu.findItem(R.id.nav_logout).setVisible(true);
-                    menu.findItem(R.id.nav_profile).setVisible(true);
-                    menu.findItem(R.id.nav_login).setVisible(false);
-                    break;
-                case R.id.nav_logout: menu.findItem(R.id.nav_logout).setVisible(false);
-                    menu.findItem(R.id.nav_profile).setVisible(false);
-                    menu.findItem(R.id.nav_login).setVisible(true);
-                    break;
-                case R.id.nav_share: Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show(); break;
-            }
-            drawerLayout.closeDrawer(GravityCompat.START); return true;
-        }
-        menu = navigationView.getMenu();
-        menu.findItem(R.id.nav_logout).setVisible(false);
-        menu.findItem(R.id.nav_profile).setVisible(false);
+        return super.onOptionsItemSelected(item);
+    }
 
-           btnInsertData.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View view) {
-                   startActivity(new Intent(ScanningActivity.this,InsertingData.class));
-               }
-           });
-        }
 
-    private void signoutFunction(){
+    public void GoToAboutUS(MenuItem item) {
+        Intent intent = new Intent(ScanningActivity.this,AboutUsActivity.class);
+
+        startActivity(intent);
+
+    }
+    public void gotoaboutpinktax(MenuItem item){
+        Intent intent = new Intent(ScanningActivity.this, AbtPinkTaxActivity.class);
+
+        startActivity(intent);
+
+    }
+    public void signoutFunction(MenuItem item){
         mAuth.signOut();
         Intent intent = new Intent(ScanningActivity.this,MainActivity.class);
 
@@ -125,20 +115,6 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
     }
 
-    private void GoToAboutUS(){
-        Intent intent = new Intent(ScanningActivity.this,AboutUsActivity.class);
-
-        startActivity(intent);
-
-    }
-    private void GoToAbtPinkTax(){
-        Intent intent = new Intent(ScanningActivity.this,AbtPinkTaxActivity.class);
-
-        startActivity(intent);
-
-    }
-
-
     private void scancode(){
         IntentIntegrator integrator = new IntentIntegrator(this);
         integrator.setCaptureActivity(CaptureAct.class);
@@ -146,6 +122,12 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
         integrator.setPrompt("Scanning Code");
         integrator.initiateScan();
+        scanButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ScanningActivity.this, CaptureAct.class));
+            }
+        });
     }
 
     @Override
@@ -184,19 +166,30 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
             super.onActivityResult(requestCode,resultCode,data);
         }
     }
+//    @Override
+//    public
 
 
+//    public void onClick(MenuItem item) {
+//
+//        if (item == scanButton) {
+//            scancode();
+//        } else if (item == signoutButton) {
+//            signoutFunction(item);
+//        } else if (item == AboutUsButton) {
+//            GoToAboutUS(item);
+//        } else if (item == AbtPinkTaxButton) {
+//            gotoaboutpinktax(item);
+//        }
+//
+//
+//    }
+
+
+    @Override
     public void onClick(View view) {
-
-        if (view == scanButton) {
+        if (view == scanButton){
             scancode();
-        } else if (view == signoutButton){
-            signoutFunction();
-        } else if (view == AboutUsButton){
-            GoToAboutUS();
-        } else if (view == AbtPinkTaxButton){
-            GoToAbtPinkTax();}
-
-
-
-}}
+        }
+    }
+}

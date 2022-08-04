@@ -1,10 +1,19 @@
 <resources>
-    <string name="app_name">scanner</string>
-    <array name="categories"
-        fontFamily="@font/regular"   >
+    <string name="app_name">PinkBird</string>
+    <array name="categories" fontFamily="@font/regular">
         <item>Pink-taxed</item>
         <item>Non pink-taxed</item>
 
+
+            <!--to toggle the open close button
+                of the navigation drawer-->
+
+
     </array>
+
+        <!--to toggle the open close button
+            of the navigation drawer-->
+        <string name="nav_open">Open</string>
+        <string name="nav_close">Close</string>
 
 </resources>

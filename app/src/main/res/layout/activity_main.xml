@@ -125,6 +125,8 @@
         android:fontFamily="@font/regular"
         android:ems="10"
         android:hint="E-mail"
+        android:textColor="@color/black"
+
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
@@ -142,6 +144,8 @@
         android:fontFamily="@font/regular"
         android:gravity="center_vertical"
         android:hint="Password"
+        android:textColor="@color/black"
+
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle"
         app:layout_constraintEnd_toEndOf="parent"
@@ -154,9 +158,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
         android:fontFamily="@font/regular"
+        android:gravity="center_vertical"
         android:text="Login"
+        android:textColor="@color/black"
 
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/sign_in"
@@ -164,13 +169,14 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/sign_in"
         app:layout_constraintTop_toTopOf="@+id/sign_in"
-        app:layout_constraintVertical_bias="0.281" />
+        app:layout_constraintVertical_bias="0.116" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="create account"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/tttt"
         app:layout_constraintEnd_toEndOf="@+id/tttt"
         app:layout_constraintHorizontal_bias="0.507"
