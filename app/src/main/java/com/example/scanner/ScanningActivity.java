@@ -1,17 +1,24 @@
 package com.example.scanner;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -24,13 +31,19 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     ImageButton scanButton, signoutButton, AboutUsButton, AbtPinkTaxButton;
     ImageButton btnInsertData;
     FirebaseAuth mAuth;
-
     DatabaseReference DBR;
     FirebaseDatabase DB;
     String Productname;
     String idnumber;
     TextView productname;
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
+    Menu menu;
+    TextView textView;
 
+
+    /*---------------------Hooks------------------------*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +53,9 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         AboutUsButton = findViewById(R.id.AboutUsButton);
         AbtPinkTaxButton = findViewById(R.id.AbtPinkTaxButton);
         btnInsertData = findViewById(R.id.rectangle_5);
+        drawerLayout=findViewById(R.id.drawer_layout);
+        navigationView=findViewById(R.id.nav_view);
+        textView=findViewById(R.id.textView);
         mAuth = FirebaseAuth.getInstance();
         DB = FirebaseDatabase.getInstance("https://pinkbird-a0d69-default-rtdb.europe-west1.firebasedatabase.app");
         DBR = DB.getReference("products");
@@ -48,6 +64,46 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         AboutUsButton.setOnClickListener(this);
         AbtPinkTaxButton.setOnClickListener(this);
 
+
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle=new
+                ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_home);
+
+        @Override
+        public void onBackPressed(){
+            if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+                drawerLayout.closeDrawer(GravityCompat.START);
+            }
+            else
+            {super.onBackPressed();
+            }
+        }
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            switch (menuItem.getItemId()) {
+                case R.id.nav_home: break; case R.id.nav_bus:
+                    Intent intent = new Intent(ScanningActivity.this, Bus.class);
+                    startActivity(intent);
+                    break;
+                case R.id.nav_login: menu.findItem(R.id.nav_logout).setVisible(true);
+                    menu.findItem(R.id.nav_profile).setVisible(true);
+                    menu.findItem(R.id.nav_login).setVisible(false);
+                    break;
+                case R.id.nav_logout: menu.findItem(R.id.nav_logout).setVisible(false);
+                    menu.findItem(R.id.nav_profile).setVisible(false);
+                    menu.findItem(R.id.nav_login).setVisible(true);
+                    break;
+                case R.id.nav_share: Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show(); break;
+            }
+            drawerLayout.closeDrawer(GravityCompat.START); return true;
+        }
+        menu = navigationView.getMenu();
+        menu.findItem(R.id.nav_logout).setVisible(false);
+        menu.findItem(R.id.nav_profile).setVisible(false);
 
            btnInsertData.setOnClickListener(new View.OnClickListener() {
                @Override
